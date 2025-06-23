@@ -5,12 +5,11 @@ This project is a basic implementation of a relational database schema for a Col
 
 The main goal of this project is to design a well-structured schema that demonstrates:
 
-- Creating a database and tables
-- Defining primary and foreign keys
-- Establishing relationships between entities
-- Writing clean and structured SQL
+- Student records
+- Courses offered by the college
+- Enrollment details (which student enrolled in which course)
 
-This project is part of my learning and internship submission, aimed at demonstrating my understanding of database design concepts.
+The goal is to build a **well-structured, normalized schema** using SQL with clearly defined **primary and foreign keys**.
 
 ## 📌 Domain: College Management
 
@@ -52,7 +51,9 @@ CREATE TABLE Enrollments (
 );
 
 ```
+
 ER DIAGRAM
+
 [Students]           [Courses]
 +------------+       +-------------+
 | StudentID  |       | CourseID    |
