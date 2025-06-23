@@ -11,6 +11,8 @@ The main goal of this project is to design a well-structured schema that demonst
 
 The goal is to build a **well-structured, normalized schema** using SQL with clearly defined **primary and foreign keys**.
 
+This project is part of my learning and internship submission, aimed at demonstrating my understanding of database design concepts.
+
 ## 📌 Domain: College Management
 
 ### Entities:
@@ -50,45 +52,34 @@ CREATE TABLE Enrollments (
     FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
 );
 
-```
-
 
 📊 ER Diagram
-[Students]
-+-------------+
-| StudentID PK|
-| Name        |
-| Email       |
-| DOB         |
-+-------------+
+[Students]           [Courses]
++------------+       +-------------+
+| StudentID  |       | CourseID    |
+| Name       |       | CourseName  |
+| Email      |       | Credits     |
+| DOB        |       +-------------+
++------------+             |
+        |                  |
+        |                  |
+        |                  |
+        |      [Enrollments]
+        |      +------------------+
+        +----> | EnrollmentID     |
+               | StudentID (FK)   |
+               | CourseID  (FK)   |
+               | EnrollmentDate   |
+               +------------------+
+```
 
-          |
-          | 1
-          |--------< Enrolls >--------|
-                       *             |
-                       |             |
-                       v             v
+✅ Features
 
-[Enrollments]
-+------------------+
-| EnrollmentID PK  |
-| StudentID FK     |
-| CourseID  FK     |
-| EnrollmentDate   |
-+------------------+
+-Structured schema for real-world use cases
 
-          ^
-          |
-          | *
-          | 1
-      [Courses]
-+----------------+
-| CourseID   PK  |
-| CourseName     |
-| Credits        |
-+----------------+
+-Clean and readable SQL
 
-
+-Easy to extend with more entities 
 
 
 ```
