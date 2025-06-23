@@ -52,22 +52,44 @@ CREATE TABLE Enrollments (
 
 ```
 
-ER DIAGRAM
 
-[Students]           [Courses]
-+------------+       +-------------+
-| StudentID  |       | CourseID    |
-| Name       |       | CourseName  |
-| Email      |       | Credits     |
-| DOB        |       +-------------+
-+------------+             |
-        |                  |
-        |                  |
-        |                  |
-        |      [Enrollments]
-        |      +------------------+
-        +----> | EnrollmentID     |
-               | StudentID (FK)   |
-               | CourseID  (FK)   |
-               | EnrollmentDate   |
-               +------------------+
+📊 ER Diagram
+[Students]
++-------------+
+| StudentID PK|
+| Name        |
+| Email       |
+| DOB         |
++-------------+
+
+          |
+          | 1
+          |--------< Enrolls >--------|
+                       *             |
+                       |             |
+                       v             v
+
+[Enrollments]
++------------------+
+| EnrollmentID PK  |
+| StudentID FK     |
+| CourseID  FK     |
+| EnrollmentDate   |
++------------------+
+
+          ^
+          |
+          | *
+          | 1
+      [Courses]
++----------------+
+| CourseID   PK  |
+| CourseName     |
+| Credits        |
++----------------+
+
+
+
+
+```
+
