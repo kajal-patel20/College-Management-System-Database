@@ -1,4 +1,4 @@
-                                                           #Task-1(Database Setup and Schema Design)
+                                                   #Task-1(Database Setup and Schema Design)
 # College-Management-System-Database
 This project is a basic implementation of a relational database schema for a College Management System using SQL. It covers the creation of tables for students, courses, and enrollments, along with appropriate keys and relationships.
 
