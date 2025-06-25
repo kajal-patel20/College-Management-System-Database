@@ -74,7 +74,7 @@ CREATE TABLE Enrollments (
                +------------------+
 ```
 
-##✅ Features
+## ✅ Features
 
 -Structured schema for real-world use cases
 
